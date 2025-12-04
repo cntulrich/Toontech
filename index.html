@@ -83,3 +83,484 @@
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .price-highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 1rem 0 2rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button.secondary {
+            background: white;
+            color: #2563eb;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .service-card li {
+            padding: 0.4rem 0;
+            color: #475569;
+        }
+        
+        .service-card li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .pricing-section {
+            background: #f8fafc;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .price-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #10b981;
+        }
+        
+        .price-card h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #10b981;
+            margin: 1rem 0;
+        }
+        
+        .flat-rates {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .flat-rates h3 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .flat-rate-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .flat-rate-item:last-child {
+            border-bottom: none;
+        }
+        
+        .flat-rate-item span:first-child {
+            font-weight: 600;
+            color: #334155;
+        }
+        
+        .flat-rate-item span:last-child {
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+        }
+        
+        .contact-section .section-title,
+        .contact-section .section-subtitle {
+            color: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item p {
+            font-size: 1.1rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .bible-quote {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            font-style: italic;
+            margin-top: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .bible-quote p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .bible-quote small {
+            opacity: 0.9;
+        }
+        
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .no-nonsense {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: #92400e;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .price-highlight {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🛠️ Toon's Tech Support</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Affordable Local IT Help in Broward County</h1>
+        <p class="tagline">Hi, I'm Christopher Ulrich, your local Broward County computer repair tech.</p>
+        <p>I offer fast, honest, affordable IT support — without the big corporate prices.</p>
+        <div class="price-highlight">
+            Most tech shops charge $80–$120/hr.<br>
+            My rate is just <strong>$50/hr</strong>, with <strong>FREE diagnostics</strong>.
+        </div>
+        <a href="tel:9548490990" class="cta-button">📞 Call/Text: 954-849-0990</a>
+        <a href="#services" class="cta-button secondary">See Services</a>
+    </section>
+
+    <section id="services" class="container">
+        <h2 class="section-title">Services I Offer</h2>
+        <p class="section-subtitle">Comprehensive IT support for homes and small businesses</p>
+        
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Computer & Laptop Repair</h3>
+                <ul>
+                    <li>Blue screen fixes</li>
+                    <li>Windows reinstall</li>
+                    <li>Overheating issues</li>
+                    <li>Hardware upgrades</li>
+                    <li>SSD installations</li>
+                    <li>Driver issues</li>
+                    <li>Battery replacement</li>
+                    <li>Custom PC building</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Virus & Malware Removal</h3>
+                <ul>
+                    <li>Complete system scanning</li>
+                    <li>Malware elimination</li>
+                    <li>Pop-up removal</li>
+                    <li>Security setup</li>
+                    <li>Prevention tips</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🛜</div>
+                <h3>WiFi & Network Help</h3>
+                <ul>
+                    <li>Router setup</li>
+                    <li>WiFi troubleshooting</li>
+                    <li>Speed optimization</li>
+                    <li>Printer connectivity</li>
+                    <li>Home/office network fixes</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💾</div>
+                <h3>Data Recovery & Transfer</h3>
+                <ul>
+                    <li>Lost file recovery</li>
+                    <li>Data transfer to new PC</li>
+                    <li>Backup solutions</li>
+                    <li>Hard drive recovery</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🖥️</div>
+                <h3>Remote Support</h3>
+                <ul>
+                    <li>Slow PC fixes</li>
+                    <li>Email issues</li>
+                    <li>Software setup</li>
+                    <li>General troubleshooting</li>
+                    <li>Quick help from home</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Small Business IT</h3>
+                <ul>
+                    <li>Computer setup</li>
+                    <li>Email/domain setup</li>
+                    <li>Office network troubleshooting</li>
+                    <li>User account setup</li>
+                    <li>Basic server support</li>
+                    <li>Backup planning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">🤑 Affordable Rates</h2>
+            <p class="section-subtitle">Honest pricing with no hidden fees</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Diagnostic</h3>
+                    <div class="price">FREE</div>
+                    <p>I'll figure out what's wrong at no charge</p>
+                </div>
+                
+                <div class="price-card">
+                    <h3>Hourly Rate</h3>
+                    <div class="price">$50/hr</div>
+                    <p>Most repairs & services</p>
+                </div>
+                
+                <div class="price-card">
+                    <h3>Remote Support</h3>
+                    <div class="price">$35/hr</div>
+                    <p>Fast help from anywhere</p>
+                </div>
+            </div>
+            
+            <div class="flat-rates">
+                <h3>Flat Rate Services</h3>
+                <div class="flat-rate-item">
+                    <span>Virus Removal</span>
+                    <span>$60</span>
+                </div>
+                <div class="flat-rate-item">
+                    <span>SSD Upgrade</span>
+                    <span>$100 + drive</span>
+                </div>
+                <div class="flat-rate-item">
+                    <span>Windows Reinstall</span>
+                    <span>$80</span>
+                </div>
+                <div class="flat-rate-item">
+                    <span>WiFi Setup</span>
+                    <span>$60</span>
+                </div>
+                <div class="flat-rate-item">
+                    <span>Data Transfer</span>
+                    <span>$50</span>
+                </div>
+                <div class="flat-rate-item">
+                    <span>Printer Setup</span>
+                    <span>$35</span>
+                </div>
+            </div>
+            
+            <div class="no-nonsense">
+                No hidden fees. No corporate nonsense. Just honest tech help.
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Text for fastest service</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p><a href="tel:9548490990">954-849-0990</a></p>
+                    <p><small>Call or text anytime</small></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:toonsupport@gmail.com">toonsupport@gmail.com</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📍 Service Area</h3>
+                    <p>Broward County, FL</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🕐 Hours</h3>
+                    <p>Mon–Sat: 9 AM – 7 PM</p>
+                    <p>Sunday: Emergency only</p>
+                </div>
+            </div>
+            
+            <div class="bible-quote">
+                <p>"Do everything without grumbling or arguing, so that you may become blameless and pure, children of God without fault in a warped and crooked generation."</p>
+                <small>— Philippians 2:14-15</small><br>
+                <p style="margin-top: 0.5rem;">Even when Windows tries your patience 😄</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Toon's Tech Support</p>
+        <p>Christopher Ulrich | Broward County, FL</p>
+        <p style="margin-top: 1rem;">Affordable, honest IT support for your home or business</p>
+    </footer>
+</body>
+</html>

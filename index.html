@@ -544,15 +544,26 @@
                 
                 <div class="contact-item">
                     <h3>🕐 Hours</h3>
-                    <p>Mon–Sat: 9 AM – 7 PM</p>
+                    <p>Mon–Sat: 12 PM – 10 PM</p>
                     <p>Sunday: Emergency only</p>
                 </div>
             </div>
             
             <div class="bible-quote">
-                <p>"Do everything without grumbling or arguing, so that you may become blameless and pure, children of God without fault in a warped and crooked generation."</p>
-                <small>— Philippians 2:14-15</small><br>
-                <p style="margin-top: 0.5rem;">Even when Windows tries your patience 😄</p>
+                <script src="https://www.biblegateway.com/votd/get/?format=json&version=NIV&callback=BG.votdWriteCallback"></script>
+                <script type="text/javascript">
+                    BG.votdWriteCallback = function(votd) {
+                        var verseHtml = '<p style="margin-bottom: 0.5rem;">' + votd.text + '</p>';
+                        verseHtml += '<small>— ' + votd.reference + ' (NIV)</small><br>';
+                        verseHtml += '<p style="margin-top: 0.5rem;">Even when Windows tries your patience 😄</p>';
+                        document.write(verseHtml);
+                    };
+                </script>
+                <noscript>
+                    <p>"Do everything without grumbling or arguing, so that you may become blameless and pure, children of God without fault in a warped and crooked generation."</p>
+                    <small>— Philippians 2:14-15</small><br>
+                    <p style="margin-top: 0.5rem;">Even when Windows tries your patience 😄</p>
+                </noscript>
             </div>
         </div>
     </section>

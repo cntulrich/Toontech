@@ -97,6 +97,24 @@
             opacity: 0.9;
         }
         
+        .service-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
         .price-highlight {
             background: rgba(255,255,255,0.2);
             padding: 1.5rem 2rem;
@@ -411,6 +429,15 @@
                 width: 180px;
                 height: 180px;
             }
+            
+            .service-badges {
+                gap: 1rem;
+            }
+            
+            .badge {
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem;
+            }
         }
     </style>
 </head>
@@ -433,7 +460,13 @@
     <section id="home" class="hero">
         <h1>Affordable Local IT Help in Broward County</h1>
         <p class="tagline">Hi, I'm Christopher Ulrich, your local Broward County computer repair tech.</p>
-        <p>I offer fast, honest, affordable IT support — without the big corporate prices.</p>
+        
+        <div class="service-badges">
+            <div class="badge">🚗 Mobile Technician</div>
+            <div class="badge">💻 Remote Support</div>
+        </div>
+        
+        <p>I offer fast, honest, affordable IT support — without the big corporate prices.<br>I come to you or help you remotely from the comfort of your home!</p>
         <div class="price-highlight">
             Most tech shops charge $80–$120/hr.<br>
             My rate is just <strong>$50/hr</strong>, with <strong>FREE diagnostics</strong>.

@@ -3,149 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Affordable IT support in Broward County, FL. Computer repair, virus removal, network help. Only $50/hr with FREE diagnostics. Call 954-849-0990">
     <title>Toon's Tech Support - Affordable Local IT Help in Broward County</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
         }
-        
-        /* Scroll Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .fade-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .fade-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        header {
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .logo-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 8px;
-            background: white;
-            padding: 4px;
-            transition: transform 0.3s ease;
-        }
-        
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: white;
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
+
         .hero {
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #7c3aed 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95)), 
+                        url('https://i.imgur.com/oyQP5HK.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            margin-top: 60px;
+            padding: 2rem 0;
             position: relative;
-            overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -153,308 +35,291 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%);
+            background: rgba(29, 78, 216, 0.3);
             pointer-events: none;
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero .tagline {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-        
-        .service-badges {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .badge {
-            background: rgba(255,255,255,0.2);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
+
+        nav {
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: all 0.3s;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        .badge:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .price-highlight {
-            background: rgba(255,255,255,0.2);
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            display: inline-block;
-            margin: 1rem 0 2rem;
-            font-size: 1.3rem;
-            font-weight: bold;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            margin: 0.5rem;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
-        }
-        
-        .cta-button.secondary {
-            background: white;
-            color: #6366f1;
-        }
-        
-        .cta-button.secondary:hover {
-            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
-        }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 0 2rem;
         }
-        
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            line-height: 1.8;
+        }
+
+        .price-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 600px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .price-highlight p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #1e40af;
         }
-        
+
         .section-subtitle {
             text-align: center;
-            font-size: 1.2rem;
-            color: #64748b;
+            color: #666;
             margin-bottom: 3rem;
+            font-size: 1.1rem;
         }
-        
-        .services {
+
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-top: 2rem;
         }
-        
+
         .service-card {
             background: white;
             padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #6366f1 0%, #7c3aed 100%);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-        
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-        
+
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
-            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
-        
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
+
         .service-card h3 {
-            color: #1e293b;
+            color: #2563eb;
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
-        
+
         .service-card ul {
             list-style: none;
-            padding-left: 0;
         }
-        
+
         .service-card li {
-            padding: 0.4rem 0;
-            color: #475569;
-            position: relative;
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
+            position: relative;
         }
-        
-        .service-card li:before {
+
+        .service-card li::before {
             content: "✓";
-            color: #10b981;
-            font-weight: bold;
             position: absolute;
             left: 0;
+            color: #10b981;
+            font-weight: bold;
         }
-        
-        .pricing-section {
-            background: linear-gradient(180deg, #f8fafc 0%, #e0e7ff 100%);
-            position: relative;
-        }
-        
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-top: 2rem;
         }
-        
-        .price-card {
+
+        .pricing-card {
             background: white;
             padding: 2rem;
-            border-radius: 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.3s;
         }
-        
-        .price-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+
+        .pricing-card:hover {
+            transform: scale(1.05);
         }
-        
-        .price-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
-            border-color: rgba(99, 102, 241, 0.3);
-        }
-        
-        .price-card h3 {
-            color: #1e293b;
+
+        .pricing-card h3 {
+            color: #2563eb;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
-        
+
         .price {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #1e40af;
             margin: 1rem 0;
         }
-        
-        .flat-rates {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+
+        .flat-rate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
-        
-        .flat-rates h3 {
-            color: #1e293b;
-            margin-bottom: 1.5rem;
+
+        .flat-rate-card {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
             text-align: center;
-            font-size: 1.8rem;
+            border: 2px solid #bfdbfe;
         }
-        
-        .flat-rate-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
+
+        .flat-rate-card h4 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
         }
-        
-        .flat-rate-item:hover {
-            background: #f8fafc;
-            padding-left: 1.5rem;
-        }
-        
-        .flat-rate-item:last-child {
-            border-bottom: none;
-        }
-        
-        .flat-rate-item span:first-child {
-            font-weight: 600;
-            color: #334155;
-        }
-        
-        .flat-rate-item span:last-child {
-            color: #10b981;
+
+        .flat-rate-price {
+            font-size: 1.5rem;
             font-weight: bold;
-            font-size: 1.2rem;
+            color: #1e40af;
         }
-        
+
         .contact-section {
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #7c3aed 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95)), 
+                        url('https://i.imgur.com/oyQP5HK.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
+            padding: 4rem 0;
             position: relative;
-            overflow: hidden;
         }
-        
+
         .contact-section::before {
             content: '';
             position: absolute;
@@ -462,598 +327,351 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%);
+            background: rgba(29, 78, 216, 0.3);
             pointer-events: none;
         }
-        
+
         .contact-section .container {
             position: relative;
             z-index: 1;
         }
-        
-        .contact-section .section-title,
+
+        .contact-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
         .contact-section .section-subtitle {
             color: white;
+            opacity: 0.95;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
-        .contact-info {
+
+        .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
+            margin-top: 3rem;
         }
-        
-        .contact-item {
-            padding: 2rem;
-            background: rgba(255,255,255,0.15);
-            border-radius: 16px;
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-            transition: all 0.4s ease;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
-        
-        .contact-item:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .contact-item h3 {
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
         }
-        
-        .contact-item p {
-            font-size: 1.1rem;
-        }
-        
-        .contact-item a {
+
+        .contact-card a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.3s;
-        }
-        
-        .contact-item a:hover {
-            opacity: 0.8;
-        }
-        
-        .bible-quote {
-            background: rgba(255,255,255,0.15);
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin-top: 3rem;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-        
-        .bible-quote h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-        }
-        
-        .verse-text {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 0.75rem;
-            line-height: 1.8;
-        }
-        
-        .verse-reference {
-            opacity: 0.9;
-            font-weight: 500;
             font-size: 1.1rem;
+            font-weight: 500;
         }
-        
-        .verse-note {
-            margin-top: 1rem;
-            font-size: 1rem;
-            opacity: 0.85;
+
+        .contact-card a:hover {
+            text-decoration: underline;
         }
-        
+
+        .verse-section {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .verse-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .verse-section p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
         footer {
             background: #1e293b;
             color: white;
-            padding: 3rem 2rem 2rem;
+            padding: 2rem 0;
+            text-align: center;
         }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-        
+
         .footer-logo {
-            width: 240px;
-            height: 240px;
-            border-radius: 12px;
-            background: white;
-            padding: 8px;
-            transition: transform 0.3s ease;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            border: 3px solid white;
         }
-        
-        .footer-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .footer-info {
-            text-align: center;
-        }
-        
-        .footer-info p {
-            margin: 0.5rem 0;
-        }
-        
-        .no-nonsense {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 600;
-            color: #92400e;
-            margin-top: 2rem;
-            box-shadow: 0 4px 15px rgba(254, 243, 199, 0.3);
-        }
-        
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-            
-            .hero .tagline {
-                font-size: 1.1rem;
+
+            .nav-content {
+                flex-direction: column;
+                text-align: center;
             }
-            
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
+
+            .section-title {
+                font-size: 2rem;
             }
-            
-            .price-highlight {
-                font-size: 1.1rem;
-            }
-            
-            .logo-img {
-                width: 110px;
-                height: 110px;
-            }
-            
-            .footer-logo {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .service-badges {
-                gap: 1rem;
-            }
-            
-            .badge {
-                font-size: 1rem;
-                padding: 0.6rem 1.2rem;
+
+            .contact-section h2 {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="hero" id="home">
         <nav>
-            <div class="logo">
-                <img src="https://raw.githubusercontent.com/cntulrich/Toontech/main/Toontech.png" alt="Toon's Tech Logo" class="logo-img" onerror="this.style.display='none'">
-                <span>Toon's Tech Support</span>
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo-section">
+                        <img src="https://raw.githubusercontent.com/cntulrich/Toontech/main/Toontech.png" alt="Toon's Tech Logo" class="logo">
+                        <div class="site-title">Toon's Tech Support</div>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="fade-in">Affordable Local IT Help in Broward County</h1>
-            <p class="tagline fade-in">Hi, I'm Christopher Ulrich, your local Broward County computer repair tech.</p>
-            
-            <div class="service-badges fade-in">
-                <div class="badge"><i class="fas fa-car"></i> Mobile Technician</div>
-                <div class="badge"><i class="fas fa-laptop"></i> Remote Support</div>
-            </div>
-            
-            <p class="fade-in">I offer fast, honest, affordable IT support — without the big corporate prices.<br>I come to you or help you remotely from the comfort of your home!</p>
-            <div class="price-highlight fade-in">
-                Most tech shops charge $80–$120/hr.<br>
-                My rate is just <strong>$50/hr</strong>, with <strong>FREE diagnostics</strong>.
-            </div>
-            <div class="fade-in">
-                <a href="tel:9548490990" class="cta-button"><i class="fas fa-phone"></i> Call/Text: 954-849-0990</a>
-                <a href="#services" class="cta-button secondary">See Services</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="container">
-        <h2 class="section-title fade-in">Services I Offer</h2>
-        <p class="section-subtitle fade-in">Comprehensive IT support for homes and small businesses</p>
-        
-        <div class="services">
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-laptop"></i></div>
-                <h3>Computer & Laptop Repair</h3>
-                <ul>
-                    <li>Blue screen fixes</li>
-                    <li>Windows reinstall</li>
-                    <li>Overheating issues</li>
-                    <li>Hardware upgrades</li>
-                    <li>SSD installations</li>
-                    <li>Driver issues</li>
-                    <li>Battery replacement</li>
-                    <li>Custom PC building</li>
-                </ul>
-            </div>
-            
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Virus & Malware Removal</h3>
-                <ul>
-                    <li>Complete system scanning</li>
-                    <li>Malware elimination</li>
-                    <li>Pop-up removal</li>
-                    <li>Security setup</li>
-                    <li>Prevention tips</li>
-                </ul>
-            </div>
-            
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-wifi"></i></div>
-                <h3>WiFi & Network Help</h3>
-                <ul>
-                    <li>Router setup</li>
-                    <li>WiFi troubleshooting</li>
-                    <li>Speed optimization</li>
-                    <li>Printer connectivity</li>
-                    <li>Home/office network fixes</li>
-                </ul>
-            </div>
-            
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-database"></i></div>
-                <h3>Data Recovery & Transfer</h3>
-                <ul>
-                    <li>Lost file recovery</li>
-                    <li>Data transfer to new PC</li>
-                    <li>Backup solutions</li>
-                    <li>Hard drive recovery</li>
-                </ul>
-            </div>
-            
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-desktop"></i></div>
-                <h3>Remote Support</h3>
-                <ul>
-                    <li>Slow PC fixes</li>
-                    <li>Email issues</li>
-                    <li>Software setup</li>
-                    <li>General troubleshooting</li>
-                    <li>Quick help from home</li>
-                </ul>
-            </div>
-            
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-building"></i></div>
-                <h3>Small Business IT</h3>
-                <ul>
-                    <li>Computer setup</li>
-                    <li>Email/domain setup</li>
-                    <li>Office network troubleshooting</li>
-                    <li>User account setup</li>
-                    <li>Basic server support</li>
-                    <li>Backup planning</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="pricing-section">
         <div class="container">
-            <h2 class="section-title fade-in">Affordable Rates</h2>
-            <p class="section-subtitle fade-in">Honest pricing with no hidden fees</p>
-            
+            <div class="hero-content">
+                <h1>Affordable Local IT Help in Broward County</h1>
+                <p class="hero-subtitle">Hi, I'm Christopher Ulrich, your local Broward County computer repair tech.</p>
+                
+                <div class="badges">
+                    <div class="badge">
+                        <strong>Mobile Technician</strong>
+                    </div>
+                    <div class="badge">
+                        <strong>Remote Support</strong>
+                    </div>
+                </div>
+
+                <div class="hero-text">
+                    <p>I offer fast, honest, affordable IT support — without the big corporate prices.<br>
+                    I come to you or help you remotely from the comfort of your home!</p>
+                </div>
+
+                <div class="price-highlight">
+                    <p>Most tech shops charge $80–$120/hr.</p>
+                    <p>My rate is just <strong style="font-size: 1.5rem;">$50/hr</strong>, with <strong>FREE diagnostics</strong>.</p>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="tel:9548490990" class="btn btn-primary">Call/Text: 954-849-0990</a>
+                    <a href="#services" class="btn btn-secondary">See Services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Services I Offer</h2>
+            <p class="section-subtitle">Comprehensive IT support for homes and small businesses</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Computer & Laptop Repair</h3>
+                    <ul>
+                        <li>Blue screen fixes</li>
+                        <li>Windows reinstall</li>
+                        <li>Overheating issues</li>
+                        <li>Hardware upgrades</li>
+                        <li>SSD installations</li>
+                        <li>Driver issues</li>
+                        <li>Battery replacement</li>
+                        <li>Custom PC building</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Virus & Malware Removal</h3>
+                    <ul>
+                        <li>Complete system scanning</li>
+                        <li>Malware elimination</li>
+                        <li>Pop-up removal</li>
+                        <li>Security setup</li>
+                        <li>Prevention tips</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>WiFi & Network Help</h3>
+                    <ul>
+                        <li>Router setup</li>
+                        <li>WiFi troubleshooting</li>
+                        <li>Speed optimization</li>
+                        <li>Printer connectivity</li>
+                        <li>Home/office network fixes</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Data Recovery & Transfer</h3>
+                    <ul>
+                        <li>Lost file recovery</li>
+                        <li>Data transfer to new PC</li>
+                        <li>Backup solutions</li>
+                        <li>Hard drive recovery</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Remote Support</h3>
+                    <ul>
+                        <li>Slow PC fixes</li>
+                        <li>Email issues</li>
+                        <li>Software setup</li>
+                        <li>General troubleshooting</li>
+                        <li>Quick help from home</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Small Business IT</h3>
+                    <ul>
+                        <li>Computer setup</li>
+                        <li>Email/domain setup</li>
+                        <li>Office network troubleshooting</li>
+                        <li>User account setup</li>
+                        <li>Basic server support</li>
+                        <li>Backup planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="pricing" style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Affordable Rates</h2>
+            <p class="section-subtitle">Honest pricing with no hidden fees</p>
+
             <div class="pricing-grid">
-                <div class="price-card scale-in">
-                    <h3><i class="fas fa-search"></i> Diagnostic</h3>
+                <div class="pricing-card">
+                    <h3>Diagnostic</h3>
                     <div class="price">FREE</div>
                     <p>I'll figure out what's wrong at no charge</p>
                 </div>
-                
-                <div class="price-card scale-in">
-                    <h3><i class="fas fa-clock"></i> Hourly Rate</h3>
+
+                <div class="pricing-card">
+                    <h3>Hourly Rate</h3>
                     <div class="price">$50/hr</div>
                     <p>Most repairs & services</p>
                 </div>
-                
-                <div class="price-card scale-in">
-                    <h3><i class="fas fa-globe"></i> Remote Support</h3>
+
+                <div class="pricing-card">
+                    <h3>Remote Support</h3>
                     <div class="price">$35/hr</div>
                     <p>Fast help from anywhere</p>
                 </div>
             </div>
-            
-            <div class="flat-rates fade-in">
-                <h3>Flat Rate Services</h3>
-                <div class="flat-rate-item">
-                    <span><i class="fas fa-bug"></i> Virus Removal</span>
-                    <span>$60</span>
+
+            <h3 style="text-align: center; margin-top: 3rem; font-size: 1.8rem; color: #2563eb;">Flat Rate Services</h3>
+            <div class="flat-rate-grid">
+                <div class="flat-rate-card">
+                    <h4>Virus Removal</h4>
+                    <div class="flat-rate-price">$60</div>
                 </div>
-                <div class="flat-rate-item">
-                    <span><i class="fas fa-hdd"></i> SSD Upgrade</span>
-                    <span>$100 + drive</span>
+                <div class="flat-rate-card">
+                    <h4>SSD Upgrade</h4>
+                    <div class="flat-rate-price">$100 + drive</div>
                 </div>
-                <div class="flat-rate-item">
-                    <span><i class="fab fa-windows"></i> Windows Reinstall</span>
-                    <span>$80</span>
+                <div class="flat-rate-card">
+                    <h4>Windows Reinstall</h4>
+                    <div class="flat-rate-price">$80</div>
                 </div>
-                <div class="flat-rate-item">
-                    <span><i class="fas fa-wifi"></i> WiFi Setup</span>
-                    <span>$60</span>
+                <div class="flat-rate-card">
+                    <h4>WiFi Setup</h4>
+                    <div class="flat-rate-price">$60</div>
                 </div>
-                <div class="flat-rate-item">
-                    <span><i class="fas fa-exchange-alt"></i> Data Transfer</span>
-                    <span>$50</span>
+                <div class="flat-rate-card">
+                    <h4>Data Transfer</h4>
+                    <div class="flat-rate-price">$50</div>
                 </div>
-                <div class="flat-rate-item">
-                    <span><i class="fas fa-print"></i> Printer Setup</span>
-                    <span>$35</span>
+                <div class="flat-rate-card">
+                    <h4>Printer Setup</h4>
+                    <div class="flat-rate-price">$35</div>
                 </div>
             </div>
-            
-            <div class="no-nonsense fade-in">
-                <i class="fas fa-handshake"></i> No hidden fees. No corporate nonsense. Just honest tech help.
-            </div>
+
+            <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: #1e40af;">
+                <strong>No hidden fees. No corporate nonsense. Just honest tech help.</strong>
+            </p>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
-            <p class="section-subtitle fade-in">Text for fastest service</p>
-            
-            <div class="contact-info">
-                <div class="contact-item fade-in-left">
-                    <h3><i class="fas fa-phone-alt"></i> Phone</h3>
-                    <p><a href="tel:9548490990">954-849-0990</a></p>
-                    <p><small>Call or text anytime</small></p>
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Text for fastest service</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <a href="tel:9548490990">954-849-0990</a>
+                    <p>Call or text anytime</p>
                 </div>
-                
-                <div class="contact-item fade-in">
-                    <h3><i class="fas fa-envelope"></i> Email</h3>
-                    <p><a href="mailto:toontech954@gmail.com">toontech954@gmail.com</a></p>
+
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <a href="mailto:toontech954@gmail.com">toontech954@gmail.com</a>
                 </div>
-                
-                <div class="contact-item fade-in">
-                    <h3><i class="fas fa-map-marker-alt"></i> Service Area</h3>
+
+                <div class="contact-card">
+                    <h3>Service Area</h3>
                     <p>Broward County, FL</p>
                 </div>
-                
-                <div class="contact-item fade-in-right">
-                    <h3><i class="fas fa-clock"></i> Hours</h3>
+
+                <div class="contact-card">
+                    <h3>Hours</h3>
                     <p>Mon–Sat: 12 PM – 10 PM</p>
                     <p>Sunday: Emergency only</p>
                 </div>
             </div>
-            
-            <div class="bible-quote fade-in">
-                <h3><i class="fas fa-book-open"></i> Daily Verse</h3>
-                <div id="verse-container">
-                    <p class="verse-text">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope."</p>
-                    <p class="verse-reference">— Jeremiah 29:11 (ESV)</p>
-                    <p class="verse-note">Even when Windows tries your patience 😄</p>
-                </div>
+
+            <div class="verse-section">
+                <h3>Daily Verse</h3>
+                <p>"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope."</p>
+                <p><strong>— Jeremiah 29:11 (ESV)</strong></p>
+                <p style="margin-top: 1rem;">Even when Windows tries your patience 😄</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <img src="https://raw.githubusercontent.com/cntulrich/Toontech/main/Toontech.png" alt="Toon's Tech Logo" class="footer-logo" onerror="this.style.display='none'">
-            <div class="footer-info">
-                <p>&copy; 2025 Toon's Tech Support</p>
-                <p>Christopher Ulrich | Broward County, FL</p>
-                <p style="margin-top: 1rem;">Affordable, honest IT support for your home or business</p>
-            </div>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/cntulrich/Toontech/main/Toontech.png" alt="Toon's Tech Logo" class="footer-logo">
+            <p>&copy; 2025 Toon's Tech Support</p>
+            <p>Christopher Ulrich | Broward County, FL</p>
+            <p>Affordable, honest IT support for your home or business</p>
         </div>
     </footer>
-
-    <script>
-        // Daily Bible verses - rotates based on the day of the year
-        const verses = [
-            {
-                text: "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
-                reference: "Jeremiah 29:11 (ESV)"
-            },
-            {
-                text: "Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
-                reference: "Proverbs 3:5-6 (ESV)"
-            },
-            {
-                text: "I can do all things through him who strengthens me.",
-                reference: "Philippians 4:13 (ESV)"
-            },
-            {
-                text: "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul.",
-                reference: "Psalm 23:1-3 (ESV)"
-            },
-            {
-                text: "And we know that for those who love God all things work together for good, for those who are called according to his purpose.",
-                reference: "Romans 8:28 (ESV)"
-            },
-            {
-                text: "Be strong and courageous. Do not fear or be in dread of them, for it is the Lord your God who goes with you. He will not leave you or forsake you.",
-                reference: "Deuteronomy 31:6 (ESV)"
-            },
-            {
-                text: "Cast your burden on the Lord, and he will sustain you; he will never permit the righteous to be moved.",
-                reference: "Psalm 55:22 (ESV)"
-            },
-            {
-                text: "But seek first the kingdom of God and his righteousness, and all these things will be added to you.",
-                reference: "Matthew 6:33 (ESV)"
-            },
-            {
-                text: "The Lord is near to the brokenhearted and saves the crushed in spirit.",
-                reference: "Psalm 34:18 (ESV)"
-            },
-            {
-                text: "Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.",
-                reference: "Joshua 1:9 (ESV)"
-            },
-            {
-                text: "But they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint.",
-                reference: "Isaiah 40:31 (ESV)"
-            },
-            {
-                text: "The Lord is my light and my salvation; whom shall I fear? The Lord is the stronghold of my life; of whom shall I be afraid?",
-                reference: "Psalm 27:1 (ESV)"
-            },
-            {
-                text: "Peace I leave with you; my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
-                reference: "John 14:27 (ESV)"
-            },
-            {
-                text: "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.",
-                reference: "John 3:16 (ESV)"
-            },
-            {
-                text: "If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness.",
-                reference: "1 John 1:9 (ESV)"
-            },
-            {
-                text: "Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God.",
-                reference: "Philippians 4:6 (ESV)"
-            },
-            {
-                text: "And my God will supply every need of yours according to his riches in glory in Christ Jesus.",
-                reference: "Philippians 4:19 (ESV)"
-            },
-            {
-                text: "The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.",
-                reference: "Lamentations 3:22-23 (ESV)"
-            },
-            {
-                text: "Commit your work to the Lord, and your plans will be established.",
-                reference: "Proverbs 16:3 (ESV)"
-            },
-            {
-                text: "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control.",
-                reference: "Galatians 5:22-23 (ESV)"
-            },
-            {
-                text: "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come.",
-                reference: "2 Corinthians 5:17 (ESV)"
-            },
-            {
-                text: "Be still, and know that I am God. I will be exalted among the nations, I will be exalted in the earth!",
-                reference: "Psalm 46:10 (ESV)"
-            },
-            {
-                text: "Let all that you do be done in love.",
-                reference: "1 Corinthians 16:14 (ESV)"
-            },
-            {
-                text: "Come to me, all who labor and are heavy laden, and I will give you rest.",
-                reference: "Matthew 11:28 (ESV)"
-            },
-            {
-                text: "Rejoice in the Lord always; again I will say, rejoice.",
-                reference: "Philippians 4:4 (ESV)"
-            },
-            {
-                text: "The name of the Lord is a strong tower; the righteous man runs into it and is safe.",
-                reference: "Proverbs 18:10 (ESV)"
-            },
-            {
-                text: "You keep him in perfect peace whose mind is stayed on you, because he trusts in you.",
-                reference: "Isaiah 26:3 (ESV)"
-            },
-            {
-                text: "Therefore do not be anxious about tomorrow, for tomorrow will be anxious for itself. Sufficient for the day is its own trouble.",
-                reference: "Matthew 6:34 (ESV)"
-            },
-            {
-                text: "In this is love, not that we have loved God but that he loved us and sent his Son to be the propitiation for our sins.",
-                reference: "1 John 4:10 (ESV)"
-            },
-            {
-                text: "Let your light shine before others, so that they may see your good works and give glory to your Father who is in heaven.",
-                reference: "Matthew 5:16 (ESV)"
-            }
-        ];
-
-        // Calculate day of year to select verse
-        function getDayOfYear() {
-            const now = new Date();
-            const start = new Date(now.getFullYear(), 0, 0);
-            const diff = now - start;
-            const oneDay = 1000 * 60 * 60 * 24;
-            return Math.floor(diff / oneDay);
-        }
-
-        // Display verse based on current day
-        function displayDailyVerse() {
-            const dayOfYear = getDayOfYear();
-            const verseIndex = dayOfYear % verses.length;
-            const verse = verses[verseIndex];
-            
-            document.getElementById('verse-container').innerHTML = `
-                <p class="verse-text">"${verse.text}"</p>
-                <p class="verse-reference">— ${verse.reference}</p>
-                <p class="verse-note">Even when Windows tries your patience 😄</p>
-            `;
-        }
-
-        // Load verse when page loads
-        displayDailyVerse();
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
-            animatedElements.forEach(el => observer.observe(el));
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

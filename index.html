@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Affordable IT support in Broward County, FL. Computer repair, virus removal, network help. Only $50/hr with FREE diagnostics. Call 954-849-0990">
     <title>Toon's Tech Support - Affordable Local IT Help in Broward County</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -16,17 +17,64 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Scroll Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
         }
         
         header {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            backdrop-filter: blur(10px);
         }
         
         nav {
@@ -52,6 +100,11 @@
             border-radius: 8px;
             background: white;
             padding: 4px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-img:hover {
+            transform: scale(1.05);
         }
         
         .nav-links {
@@ -63,20 +116,51 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
             font-weight: 500;
+            position: relative;
         }
         
-        .nav-links a:hover {
-            opacity: 0.8;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         .hero {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #7c3aed 100%);
             color: white;
             padding: 8rem 2rem 4rem;
             text-align: center;
             margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
@@ -113,39 +197,53 @@
             font-weight: 600;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+        
+        .badge:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .price-highlight {
             background: rgba(255,255,255,0.2);
             padding: 1.5rem 2rem;
-            border-radius: 10px;
+            border-radius: 15px;
             display: inline-block;
             margin: 1rem 0 2rem;
             font-size: 1.3rem;
             font-weight: bold;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
         }
         
         .cta-button {
             display: inline-block;
-            background: #10b981;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             padding: 1.2rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             margin: 0.5rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
         }
         
         .cta-button.secondary {
             background: white;
-            color: #2563eb;
+            color: #6366f1;
+        }
+        
+        .cta-button.secondary:hover {
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
         }
         
         .container {
@@ -158,7 +256,10 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #1e40af;
+            background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .section-subtitle {
@@ -178,24 +279,52 @@
         .service-card {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 4px solid #2563eb;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1 0%, #7c3aed 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.3);
         }
         
         .service-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
         
         .service-card h3 {
-            color: #1e40af;
+            color: #1e293b;
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
@@ -208,17 +337,21 @@
         .service-card li {
             padding: 0.4rem 0;
             color: #475569;
+            position: relative;
+            padding-left: 1.5rem;
         }
         
         .service-card li:before {
-            content: "✓ ";
+            content: "✓";
             color: #10b981;
             font-weight: bold;
-            margin-right: 0.5rem;
+            position: absolute;
+            left: 0;
         }
         
         .pricing-section {
-            background: #f8fafc;
+            background: linear-gradient(180deg, #f8fafc 0%, #e0e7ff 100%);
+            position: relative;
         }
         
         .pricing-grid {
@@ -231,14 +364,33 @@
         .price-card {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border-top: 4px solid #10b981;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.3);
         }
         
         .price-card h3 {
-            color: #1e40af;
+            color: #1e293b;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -246,19 +398,22 @@
         .price {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #10b981;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 1rem 0;
         }
         
         .flat-rates {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
         }
         
         .flat-rates h3 {
-            color: #1e40af;
+            color: #1e293b;
             margin-bottom: 1.5rem;
             text-align: center;
             font-size: 1.8rem;
@@ -270,6 +425,12 @@
             align-items: center;
             padding: 1rem;
             border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .flat-rate-item:hover {
+            background: #f8fafc;
+            padding-left: 1.5rem;
         }
         
         .flat-rate-item:last-child {
@@ -288,8 +449,27 @@
         }
         
         .contact-section {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #7c3aed 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .contact-section .container {
+            position: relative;
+            z-index: 1;
         }
         
         .contact-section .section-title,
@@ -307,9 +487,17 @@
         
         .contact-item {
             padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 16px;
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
         .contact-item h3 {
@@ -325,15 +513,21 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
         }
         
         .bible-quote {
             background: rgba(255,255,255,0.15);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 16px;
             text-align: center;
             margin-top: 3rem;
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
         }
         
         .bible-quote h3 {
@@ -382,6 +576,11 @@
             border-radius: 12px;
             background: white;
             padding: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-logo:hover {
+            transform: scale(1.05);
         }
         
         .footer-info {
@@ -393,13 +592,14 @@
         }
         
         .no-nonsense {
-            background: #fef3c7;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
             font-weight: 600;
             color: #92400e;
             margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(254, 243, 199, 0.3);
         }
         
         @media (max-width: 768px) {
@@ -458,30 +658,34 @@
     </header>
 
     <section id="home" class="hero">
-        <h1>Affordable Local IT Help in Broward County</h1>
-        <p class="tagline">Hi, I'm Christopher Ulrich, your local Broward County computer repair tech.</p>
-        
-        <div class="service-badges">
-            <div class="badge">🚗 Mobile Technician</div>
-            <div class="badge">💻 Remote Support</div>
+        <div class="hero-content">
+            <h1 class="fade-in">Affordable Local IT Help in Broward County</h1>
+            <p class="tagline fade-in">Hi, I'm Christopher Ulrich, your local Broward County computer repair tech.</p>
+            
+            <div class="service-badges fade-in">
+                <div class="badge"><i class="fas fa-car"></i> Mobile Technician</div>
+                <div class="badge"><i class="fas fa-laptop"></i> Remote Support</div>
+            </div>
+            
+            <p class="fade-in">I offer fast, honest, affordable IT support — without the big corporate prices.<br>I come to you or help you remotely from the comfort of your home!</p>
+            <div class="price-highlight fade-in">
+                Most tech shops charge $80–$120/hr.<br>
+                My rate is just <strong>$50/hr</strong>, with <strong>FREE diagnostics</strong>.
+            </div>
+            <div class="fade-in">
+                <a href="tel:9548490990" class="cta-button"><i class="fas fa-phone"></i> Call/Text: 954-849-0990</a>
+                <a href="#services" class="cta-button secondary">See Services</a>
+            </div>
         </div>
-        
-        <p>I offer fast, honest, affordable IT support — without the big corporate prices.<br>I come to you or help you remotely from the comfort of your home!</p>
-        <div class="price-highlight">
-            Most tech shops charge $80–$120/hr.<br>
-            My rate is just <strong>$50/hr</strong>, with <strong>FREE diagnostics</strong>.
-        </div>
-        <a href="tel:9548490990" class="cta-button">📞 Call/Text: 954-849-0990</a>
-        <a href="#services" class="cta-button secondary">See Services</a>
     </section>
 
     <section id="services" class="container">
-        <h2 class="section-title">Services I Offer</h2>
-        <p class="section-subtitle">Comprehensive IT support for homes and small businesses</p>
+        <h2 class="section-title fade-in">Services I Offer</h2>
+        <p class="section-subtitle fade-in">Comprehensive IT support for homes and small businesses</p>
         
         <div class="services">
-            <div class="service-card">
-                <div class="service-icon">💻</div>
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-laptop"></i></div>
                 <h3>Computer & Laptop Repair</h3>
                 <ul>
                     <li>Blue screen fixes</li>
@@ -495,8 +699,8 @@
                 </ul>
             </div>
             
-            <div class="service-card">
-                <div class="service-icon">🛡️</div>
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Virus & Malware Removal</h3>
                 <ul>
                     <li>Complete system scanning</li>
@@ -507,8 +711,8 @@
                 </ul>
             </div>
             
-            <div class="service-card">
-                <div class="service-icon">🛜</div>
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-wifi"></i></div>
                 <h3>WiFi & Network Help</h3>
                 <ul>
                     <li>Router setup</li>
@@ -519,8 +723,8 @@
                 </ul>
             </div>
             
-            <div class="service-card">
-                <div class="service-icon">💾</div>
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-database"></i></div>
                 <h3>Data Recovery & Transfer</h3>
                 <ul>
                     <li>Lost file recovery</li>
@@ -530,8 +734,8 @@
                 </ul>
             </div>
             
-            <div class="service-card">
-                <div class="service-icon">🖥️</div>
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-desktop"></i></div>
                 <h3>Remote Support</h3>
                 <ul>
                     <li>Slow PC fixes</li>
@@ -542,8 +746,8 @@
                 </ul>
             </div>
             
-            <div class="service-card">
-                <div class="service-icon">🏢</div>
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
                 <h3>Small Business IT</h3>
                 <ul>
                     <li>Computer setup</li>
@@ -559,94 +763,94 @@
 
     <section id="pricing" class="pricing-section">
         <div class="container">
-            <h2 class="section-title">🤑 Affordable Rates</h2>
-            <p class="section-subtitle">Honest pricing with no hidden fees</p>
+            <h2 class="section-title fade-in">Affordable Rates</h2>
+            <p class="section-subtitle fade-in">Honest pricing with no hidden fees</p>
             
             <div class="pricing-grid">
-                <div class="price-card">
-                    <h3>Diagnostic</h3>
+                <div class="price-card scale-in">
+                    <h3><i class="fas fa-search"></i> Diagnostic</h3>
                     <div class="price">FREE</div>
                     <p>I'll figure out what's wrong at no charge</p>
                 </div>
                 
-                <div class="price-card">
-                    <h3>Hourly Rate</h3>
+                <div class="price-card scale-in">
+                    <h3><i class="fas fa-clock"></i> Hourly Rate</h3>
                     <div class="price">$50/hr</div>
                     <p>Most repairs & services</p>
                 </div>
                 
-                <div class="price-card">
-                    <h3>Remote Support</h3>
+                <div class="price-card scale-in">
+                    <h3><i class="fas fa-globe"></i> Remote Support</h3>
                     <div class="price">$35/hr</div>
                     <p>Fast help from anywhere</p>
                 </div>
             </div>
             
-            <div class="flat-rates">
+            <div class="flat-rates fade-in">
                 <h3>Flat Rate Services</h3>
                 <div class="flat-rate-item">
-                    <span>Virus Removal</span>
+                    <span><i class="fas fa-bug"></i> Virus Removal</span>
                     <span>$60</span>
                 </div>
                 <div class="flat-rate-item">
-                    <span>SSD Upgrade</span>
+                    <span><i class="fas fa-hdd"></i> SSD Upgrade</span>
                     <span>$100 + drive</span>
                 </div>
                 <div class="flat-rate-item">
-                    <span>Windows Reinstall</span>
+                    <span><i class="fab fa-windows"></i> Windows Reinstall</span>
                     <span>$80</span>
                 </div>
                 <div class="flat-rate-item">
-                    <span>WiFi Setup</span>
+                    <span><i class="fas fa-wifi"></i> WiFi Setup</span>
                     <span>$60</span>
                 </div>
                 <div class="flat-rate-item">
-                    <span>Data Transfer</span>
+                    <span><i class="fas fa-exchange-alt"></i> Data Transfer</span>
                     <span>$50</span>
                 </div>
                 <div class="flat-rate-item">
-                    <span>Printer Setup</span>
+                    <span><i class="fas fa-print"></i> Printer Setup</span>
                     <span>$35</span>
                 </div>
             </div>
             
-            <div class="no-nonsense">
-                No hidden fees. No corporate nonsense. Just honest tech help.
+            <div class="no-nonsense fade-in">
+                <i class="fas fa-handshake"></i> No hidden fees. No corporate nonsense. Just honest tech help.
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Text for fastest service</p>
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <p class="section-subtitle fade-in">Text for fastest service</p>
             
             <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📞 Phone</h3>
+                <div class="contact-item fade-in-left">
+                    <h3><i class="fas fa-phone-alt"></i> Phone</h3>
                     <p><a href="tel:9548490990">954-849-0990</a></p>
                     <p><small>Call or text anytime</small></p>
                 </div>
                 
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
+                <div class="contact-item fade-in">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
                     <p><a href="mailto:toontech954@gmail.com">toontech954@gmail.com</a></p>
                 </div>
                 
-                <div class="contact-item">
-                    <h3>📍 Service Area</h3>
+                <div class="contact-item fade-in">
+                    <h3><i class="fas fa-map-marker-alt"></i> Service Area</h3>
                     <p>Broward County, FL</p>
                 </div>
                 
-                <div class="contact-item">
-                    <h3>🕐 Hours</h3>
+                <div class="contact-item fade-in-right">
+                    <h3><i class="fas fa-clock"></i> Hours</h3>
                     <p>Mon–Sat: 12 PM – 10 PM</p>
                     <p>Sunday: Emergency only</p>
                 </div>
             </div>
             
-            <div class="bible-quote">
-                <h3>📖 Daily Verse</h3>
+            <div class="bible-quote fade-in">
+                <h3><i class="fas fa-book-open"></i> Daily Verse</h3>
                 <div id="verse-container">
                     <p class="verse-text">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope."</p>
                     <p class="verse-reference">— Jeremiah 29:11 (ESV)</p>
@@ -816,6 +1020,40 @@
 
         // Load verse when page loads
         displayDailyVerse();
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
